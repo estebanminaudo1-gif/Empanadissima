@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Empanadissima - Deliciosas empanadas y pizzas en Mar del Plata. Haz tu pedido online de forma rápida, sencilla y segura.">
+    <title>Empanadissima - Pedidos Online</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-brand">
+                <!-- LOGO REEMPLAZABLE POR EL USUARIO: logo.png -->
+                <img src="logo.png" alt="Empanadissima Logo" class="brand-logo-img" id="header-logo" onerror="this.style.display='none'; document.getElementById('header-logo-fallback').style.display='flex'">
+                <div id="header-logo-fallback" class="logo-fallback" style="display: none;">
+                    <span class="fallback-circle">E</span>
+                </div>
+                <span class="brand-name">Empanadissima</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#menu-gallery" class="nav-link">Galería</a>
+                <a href="#wizard-section" class="btn btn-primary btn-sm">Hacer Pedido</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge"><i data-lucide="sparkles"></i> Sabor Único en Mar del Plata</span>
+                <h1>Las mejores empanadas y pizzas artesanales</h1>
+                <p class="hero-description">
+                    Ingredientes de primera calidad, masa casera y ese toque único que estabas buscando. ¡Haz tu pedido online ahora mismo y recíbelo calentito!
+                </p>
+                <div class="hero-info-grid">
+                    <div class="info-card">
+                        <i data-lucide="map-pin" class="info-icon"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Edison 1587, Mar del Plata</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <i data-lucide="clock" class="info-icon"></i>
+                        <div>
+                            <h4>Horarios</h4>
+                            <p>Lunes a Sábado de 11:00 a 17:00 hs</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#wizard-section" class="btn btn-primary btn-lg pulse-effect">Pedir Online Ahora</a>
+                    <a href="https://maps.app.goo.gl/MmWbKdH2dvay2Wmo8" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+                        <i data-lucide="map"></i> Ver en Google Maps
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="main-brand-logo-wrapper">
+                    <!-- LOGO REEMPLAZABLE POR EL USUARIO -->
+                    <img src="logo.png" alt="Empanadissima Logo Principal" class="main-brand-logo-large" onerror="this.src='empanadas.jpg'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERÍA / SECCIÓN DE PRODUCTOS -->
+    <section id="menu-gallery" class="gallery-section">
+        <div class="section-title-wrapper">
+            <span class="section-subtitle">Nuestras Especialidades</span>
+            <h2>Nuestra Cocina</h2>
+            <div class="title-decorator"></div>
+        </div>
+
+        <div class="gallery-grid">
+            <!-- CARD EMPANADAS -->
+            <div class="gallery-card">
+                <div class="card-image-wrapper">
+                    <!-- IMAGEN REEMPLAZABLE POR EL USUARIO: empanadas.jpg -->
+                    <img src="empanadas.jpg" alt="Empanadas Caseras" class="gallery-img">
+                    <span class="card-price-tag">Desde $2.500 c/u</span>
+                </div>
+                <div class="card-body">
+                    <h3>Empanadas Premium</h3>
+                    <p>Masa casera dorada al horno. Disponibles en sabor Carne, Carne cortada a cuchillo, Pollo, Jamón y Queso, y Verdura.</p>
+                    <div class="card-offer">
+                        <i data-lucide="piggy-bank"></i>
+                        <span>¡Llevando una docena pagas solo <strong>$28.000</strong>!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD PIZZAS -->
+            <div class="gallery-card">
+                <div class="card-image-wrapper">
+                    <!-- IMAGEN REEMPLAZABLE POR EL USUARIO: pizzas.jpg -->
+                    <img src="pizzas.jpg" alt="Pizzas a la Piedra" class="gallery-img">
+                    <span class="card-price-tag">$18.500 c/u</span>
+                </div>
+                <div class="card-body">
+                    <h3>Pizzas Artesanales</h3>
+                    <p>Salsa natural de tomates seleccionados, abundante queso y horneadas a la perfección. Muzza, Napolitana, Napo Especial y Fugazzeta.</p>
+                    <div class="card-offer">
+                        <i data-lucide="pizza"></i>
+                        <span>Ingredientes frescos y masa con leudado lento.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD PROMOS -->
+            <div class="gallery-card promo-card">
+                <div class="card-image-wrapper">
+                    <div class="promo-badge-tag">¡Súper Promos!</div>
+                    <img src="empanadas.jpg" alt="Promociones Empanadissima" class="gallery-img blur-overlay">
+                    <div class="promo-overlay-text">
+                        <div class="promo-item-detail">
+                            <span class="promo-name">Promo 1</span>
+                            <span class="promo-desc">3 Muzzas + 1 Docena de Empanadas</span>
+                            <span class="promo-price">$42.000</span>
+                        </div>
+                        <hr class="promo-divider">
+                        <div class="promo-item-detail">
+                            <span class="promo-name">Promo 2</span>
+                            <span class="promo-desc">1 Napolitana + 1 Muzzarella</span>
+                            <span class="promo-price">$30.000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3>Combos para Compartir</h3>
+                    <p>Disfruta de la mejor combinación de sabores a un precio increíble. Ideal para reuniones familiares o con amigos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN INTERACTIVA DE PEDIDOS (ORDER WIZARD) -->
+    <section id="wizard-section" class="wizard-section">
+        <div class="wizard-container">
+            <div class="wizard-main">
+                <div class="section-title-wrapper text-left">
+                    <span class="section-subtitle">Realiza tu Pedido</span>
+                    <h2>Asistente de Pedidos</h2>
+                    <p>Sigue los sencillos pasos para armar tu pedido a medida.</p>
+                </div>
+
+                <!-- Barra de Progreso -->
+                <div class="progress-bar-container">
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <div class="step-node active" data-step="1">
+                            <div class="step-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="step-label">Entrega</span>
+                        </div>
+                        <div class="step-node" data-step="2">
+                            <div class="step-icon"><i data-lucide="shopping-bag"></i></div>
+                            <span class="step-label">Productos</span>
+                        </div>
+                        <div class="step-node" data-step="3">
+                            <div class="step-icon"><i data-lucide="glass-water"></i></div>
+                            <span class="step-label">Bebidas</span>
+                        </div>
+                        <div class="step-node" data-step="4">
+                            <div class="step-icon"><i data-lucide="check-circle"></i></div>
+                            <span class="step-label">Confirmación</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORMULARIO GENERAL -->
+                <form id="order-form" onsubmit="event.preventDefault();">
+                    
+                    <!-- PASO 1: TIPO DE ENTREGA -->
+                    <div class="wizard-step active" id="wizard-step-1">
+                        <h3>1. Datos de Entrega y Contacto</h3>
+                        <p class="step-instruction">Indícanos cómo quieres recibir tu pedido y tus datos básicos.</p>
+                        
+                        <div class="delivery-options-grid">
+                            <label class="delivery-card-option selected">
+                                <input type="radio" name="delivery_type" value="domicilio" checked>
+                                <div class="option-content">
+                                    <i data-lucide="truck" class="option-icon"></i>
+                                    <span class="option-title">Envío a Domicilio</span>
+                                    <span class="option-desc">Lo llevamos calientito a tu casa</span>
+                                </div>
+                            </label>
+                            
+                            <label class="delivery-card-option">
+                                <input type="radio" name="delivery_type" value="local">
+                                <div class="option-content">
+                                    <i data-lucide="store" class="option-icon"></i>
+                                    <span class="option-title">Retiro en Sucursal</span>
+                                    <span class="option-desc">Retira en nuestro local</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- Dirección Informativa del Local -->
+                        <div id="local-info-box" class="info-alert" style="display: none;">
+                            <i data-lucide="info" class="info-alert-icon"></i>
+                            <div>
+                                <strong>Retiras en:</strong> Edison 1587, Mar del Plata.
+                                <br><small>Tu pedido estará listo en aproximadamente 25-30 minutos.</small>
+                            </div>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group full-width" id="address-group">
+                                <label for="client_address">Domicilio Completo <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="navigation"></i>
+                                    <input type="text" id="client_address" name="client_address" placeholder="Calle, número, piso/depto (ej: Edison 1587, PB A)">
+                                </div>
+                                <span class="error-msg" id="address-error">Este campo es obligatorio para envíos.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="client_name">Nombre del Cliente <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="user"></i>
+                                    <input type="text" id="client_name" name="client_name" placeholder="Tu nombre y apellido">
+                                </div>
+                                <span class="error-msg" id="name-error">El nombre es obligatorio.</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="client_phone">Teléfono de Contacto <span class="required">*</span></label>
+                                <div class="input-with-icon">
+                                    <i data-lucide="phone"></i>
+                                    <input type="tel" id="client_phone" name="client_phone" placeholder="Ej: 2235123456">
+                                </div>
+                                <span class="error-msg" id="phone-error">El teléfono es obligatorio.</span>
+                            </div>
+                        </div>
+
+                        <div class="wizard-actions">
+                            <button type="button" class="btn btn-primary btn-next" data-next="2">Siguiente Paso <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 2: SELECCIÓN DE PRODUCTOS -->
+                    <div class="wizard-step" id="wizard-step-2">
+                        <h3>2. ¿Qué deseas pedir hoy?</h3>
+                        <p class="step-instruction">Arma tu carrito seleccionando pizzas, empanadas o nuestras increíbles promociones.</p>
+
+                        <!-- Categorías Selector -->
+                        <div class="menu-tabs">
+                            <button type="button" class="tab-btn active" data-tab="pizzas-container"><i data-lucide="pizza"></i> Pizzas</button>
+                            <button type="button" class="tab-btn" data-tab="empanadas-container"><i data-lucide="utensils-crosshair"></i> Empanadas</button>
+                            <button type="button" class="tab-btn" data-tab="promos-container"><i data-lucide="percent"></i> Promociones</button>
+                        </div>
+
+                        <!-- SECTOR PIZZAS -->
+                        <div id="pizzas-container" class="tab-content active">
+                            <div class="menu-selector-header">
+                                <h4>Pizzas Artesanales <span class="badge-price">$18.500 c/u</span></h4>
+                                <p>Elige las variedades que quieras y su cantidad.</p>
+                            </div>
+                            <div class="items-list-grid">
+                                <!-- Pizza Muzza -->
+                                <div class="item-selector-card" data-pizza-type="muzza">
+                                    <div class="item-info">
+                                        <h5>Muzzarella</h5>
+                                        <p class="item-desc">Salsa de tomate, abundante muzzarella, orégano y aceitunas.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPizzaQty('muzza', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-pizza-muzza">0</span>
+                                        <input type="hidden" name="pizza_muzza" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPizzaQty('muzza', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Pizza Napolitana -->
+                                <div class="item-selector-card" data-pizza-type="napolitana">
+                                    <div class="item-info">
+                                        <h5>Napolitana</h5>
+                                        <p class="item-desc">Salsa de tomate, muzzarella, rodajas de tomate fresco, ajo y albahaca.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPizzaQty('napolitana', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-pizza-napolitana">0</span>
+                                        <input type="hidden" name="pizza_napolitana" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPizzaQty('napolitana', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Pizza Napolitana Especial -->
+                                <div class="item-selector-card" data-pizza-type="napo-especial">
+                                    <div class="item-info">
+                                        <h5>Napolitana Especial</h5>
+                                        <p class="item-desc">Muzzarella, rodajas de tomate, jamón cocido de primera, huevo duro y aceitunas.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPizzaQty('napo-especial', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-pizza-napo-especial">0</span>
+                                        <input type="hidden" name="pizza_napo_especial" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPizzaQty('napo-especial', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Pizza Fugazzeta -->
+                                <div class="item-selector-card" data-pizza-type="fugazzeta">
+                                    <div class="item-info">
+                                        <h5>Fugazzeta</h5>
+                                        <p class="item-desc">Abundante cebolla rehogada, muzzarella, orégano, aceitunas negras.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPizzaQty('fugazzeta', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-pizza-fugazzeta">0</span>
+                                        <input type="hidden" name="pizza_fugazzeta" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPizzaQty('fugazzeta', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTOR EMPANADAS -->
+                        <div id="empanadas-container" class="tab-content">
+                            <div class="menu-selector-header">
+                                <h4>Empanadas Caseras <span class="badge-price">$2.500 c/u | $28.000 Docena</span></h4>
+                                <p>Selecciona la cantidad total de empanadas indicando los sabores que deseas.</p>
+                            </div>
+                            
+                            <!-- Indicador de total de sabores y docenas -->
+                            <div class="empanada-tracker">
+                                <div class="tracker-item">
+                                    <span class="tracker-num" id="empanadas-total-qty">0</span>
+                                    <span class="tracker-label">Empanadas elegidas</span>
+                                </div>
+                                <div class="tracker-item">
+                                    <span class="tracker-num" id="empanadas-docenas-calc">0</span>
+                                    <span class="tracker-label">Docenas calculadas</span>
+                                </div>
+                            </div>
+
+                            <div class="items-list-grid">
+                                <!-- Sabor Carne -->
+                                <div class="item-selector-card" data-empanada-flavor="carne">
+                                    <div class="item-info">
+                                        <h5>Carne</h5>
+                                        <p class="item-desc">Clásica carne suave con condimentos criollos.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustEmpanadaQty('carne', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-empanada-carne">0</span>
+                                        <input type="hidden" name="empanada_carne" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustEmpanadaQty('carne', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Sabor Carne Cuchillo -->
+                                <div class="item-selector-card" data-empanada-flavor="carne-cuchillo">
+                                    <div class="item-info">
+                                        <h5>Carne cortada a cuchillo</h5>
+                                        <p class="item-desc">Carne seleccionada picada a mano, cebolla de verdeo y huevo.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustEmpanadaQty('carne-cuchillo', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-empanada-carne-cuchillo">0</span>
+                                        <input type="hidden" name="empanada_carne_cuchillo" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustEmpanadaQty('carne-cuchillo', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Sabor Pollo -->
+                                <div class="item-selector-card" data-empanada-flavor="pollo">
+                                    <div class="item-info">
+                                        <h5>Pollo</h5>
+                                        <p class="item-desc">Pollo desmenuzado con morrones y condimentos.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustEmpanadaQty('pollo', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-empanada-pollo">0</span>
+                                        <input type="hidden" name="empanada_pollo" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustEmpanadaQty('pollo', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Sabor Jamon y Queso -->
+                                <div class="item-selector-card" data-empanada-flavor="jamon-queso">
+                                    <div class="item-info">
+                                        <h5>Jamón y Queso</h5>
+                                        <p class="item-desc">Cubos de jamón cocido y abundante queso muzzarella.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustEmpanadaQty('jamon-queso', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-empanada-jamon-queso">0</span>
+                                        <input type="hidden" name="empanada_jamon_queso" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustEmpanadaQty('jamon-queso', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Sabor Verdura -->
+                                <div class="item-selector-card" data-empanada-flavor="verdura">
+                                    <div class="item-info">
+                                        <h5>Verdura</h5>
+                                        <p class="item-desc">Espinaca fresca con salsa blanca suave y queso.</p>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustEmpanadaQty('verdura', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-empanada-verdura">0</span>
+                                        <input type="hidden" name="empanada_verdura" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustEmpanadaQty('verdura', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SECTOR PROMOS -->
+                        <div id="promos-container" class="tab-content">
+                            <div class="menu-selector-header">
+                                <h4>Promociones Imperdibles</h4>
+                                <p>Combos con precios especiales ya aplicados.</p>
+                            </div>
+                            <div class="items-list-grid">
+                                <!-- Promo 1 -->
+                                <div class="item-selector-card promo-selector-card" data-promo-type="promo1">
+                                    <div class="item-info">
+                                        <span class="promo-badge">Más Elegida</span>
+                                        <h5>Promo 1: 3 Muzzarellas + 1 Docena de Empanadas</h5>
+                                        <p class="item-desc">Disfruta de 3 pizzas de muzzarella y una docena de empanadas a elección.</p>
+                                        <span class="promo-card-price">$42.000</span>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPromoQty('promo1', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-promo-promo1">0</span>
+                                        <input type="hidden" name="promo_promo1" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPromoQty('promo1', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- SELECCIÓN DE SABORES PARA PROMO 1 (Solo aparece si se selecciona) -->
+                                <div id="promo1-flavors-section" class="promo-flavors-box" style="display: none;">
+                                    <h5><i data-lucide="check-square"></i> Elige los sabores para tu docena de empanadas de la Promo 1:</h5>
+                                    <p class="flavor-limit-desc">Debes elegir exactamente <strong id="promo1-target-qty">12</strong> empanadas. Llevas seleccionadas: <strong id="promo1-selected-qty">0</strong>.</p>
+                                    
+                                    <div class="promo-flavors-grid">
+                                        <div class="flavor-qty-row">
+                                            <span>Carne</span>
+                                            <div class="qty-mini-controller">
+                                                <button type="button" onclick="adjustPromo1Flavor('carne', -1)">-</button>
+                                                <span id="qty-promo1-carne">0</span>
+                                                <button type="button" onclick="adjustPromo1Flavor('carne', 1)">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="flavor-qty-row">
+                                            <span>Carne cortada a cuchillo</span>
+                                            <div class="qty-mini-controller">
+                                                <button type="button" onclick="adjustPromo1Flavor('carne-cuchillo', -1)">-</button>
+                                                <span id="qty-promo1-carne-cuchillo">0</span>
+                                                <button type="button" onclick="adjustPromo1Flavor('carne-cuchillo', 1)">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="flavor-qty-row">
+                                            <span>Pollo</span>
+                                            <div class="qty-mini-controller">
+                                                <button type="button" onclick="adjustPromo1Flavor('pollo', -1)">-</button>
+                                                <span id="qty-promo1-pollo">0</span>
+                                                <button type="button" onclick="adjustPromo1Flavor('pollo', 1)">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="flavor-qty-row">
+                                            <span>Jamón y Queso</span>
+                                            <div class="qty-mini-controller">
+                                                <button type="button" onclick="adjustPromo1Flavor('jamon-queso', -1)">-</button>
+                                                <span id="qty-promo1-jamon-queso">0</span>
+                                                <button type="button" onclick="adjustPromo1Flavor('jamon-queso', 1)">+</button>
+                                            </div>
+                                        </div>
+                                        <div class="flavor-qty-row">
+                                            <span>Verdura</span>
+                                            <div class="qty-mini-controller">
+                                                <button type="button" onclick="adjustPromo1Flavor('verdura', -1)">-</button>
+                                                <span id="qty-promo1-verdura">0</span>
+                                                <button type="button" onclick="adjustPromo1Flavor('verdura', 1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="error-msg" id="promo1-flavor-error">Debes seleccionar exactamente las 12 empanadas de la promoción.</span>
+                                </div>
+
+                                <!-- Promo 2 -->
+                                <div class="item-selector-card promo-selector-card" data-promo-type="promo2">
+                                    <div class="item-info">
+                                        <h5>Promo 2: 1 Napolitana + 1 Muzzarella</h5>
+                                        <p class="item-desc">La pareja perfecta. Disfruta de una pizza Napolitana y una Muzzarella.</p>
+                                        <span class="promo-card-price">$30.000</span>
+                                    </div>
+                                    <div class="quantity-controller">
+                                        <button type="button" class="qty-btn qty-minus" onclick="adjustPromoQty('promo2', -1)"><i data-lucide="minus"></i></button>
+                                        <span class="qty-val" id="qty-promo-promo2">0</span>
+                                        <input type="hidden" name="promo_promo2" value="0">
+                                        <button type="button" class="qty-btn qty-plus" onclick="adjustPromoQty('promo2', 1)"><i data-lucide="plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-actions">
+                            <button type="button" class="btn btn-secondary btn-prev" data-prev="1"><i data-lucide="arrow-left"></i> Anterior</button>
+                            <button type="button" class="btn btn-primary btn-next" data-next="3">Siguiente Paso <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 3: BEBIDAS -->
+                    <div class="wizard-step" id="wizard-step-3">
+                        <h3>3. ¿Deseas agregar bebidas?</h3>
+                        <p class="step-instruction">Acompaña tu comida con bebidas de la línea Coca-Cola. Puedes definir su precio o dejarlo editable.</p>
+
+                        <div class="beverage-config-card">
+                            <div class="price-editor-row">
+                                <label for="beverage-unit-price"><i data-lucide="edit-3"></i> Definir precio por bebida ($):</label>
+                                <input type="number" id="beverage-unit-price" value="2000" min="0" step="100" oninput="updateBeveragePrices(this.value)">
+                            </div>
+                            <span class="price-editable-notice">Puedes modificar el precio unitario y se recalculará automáticamente.</span>
+                        </div>
+
+                        <div class="items-list-grid">
+                            <!-- Coca-Cola Original -->
+                            <div class="item-selector-card" data-beverage-type="coca-original">
+                                <div class="item-info">
+                                    <h5>Coca-Cola Sabor Original (1.5L)</h5>
+                                    <p class="item-desc">Refrescante bebida gaseosa sabor original.</p>
+                                    <span class="beverage-price-display" data-base-price="2000">$2.000 c/u</span>
+                                </div>
+                                <div class="quantity-controller">
+                                    <button type="button" class="qty-btn qty-minus" onclick="adjustBeverageQty('coca-original', -1)"><i data-lucide="minus"></i></button>
+                                    <span class="qty-val" id="qty-bev-coca-original">0</span>
+                                    <input type="hidden" name="bev_coca_original" value="0">
+                                    <button type="button" class="qty-btn qty-plus" onclick="adjustBeverageQty('coca-original', 1)"><i data-lucide="plus"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Coca-Cola Zero -->
+                            <div class="item-selector-card" data-beverage-type="coca-zero">
+                                <div class="item-info">
+                                    <h5>Coca-Cola Sin Azúcar (1.5L)</h5>
+                                    <p class="item-desc">El sabor de Coca-Cola que te encanta, pero sin azúcar.</p>
+                                    <span class="beverage-price-display" data-base-price="2000">$2.000 c/u</span>
+                                </div>
+                                <div class="quantity-controller">
+                                    <button type="button" class="qty-btn qty-minus" onclick="adjustBeverageQty('coca-zero', -1)"><i data-lucide="minus"></i></button>
+                                    <span class="qty-val" id="qty-bev-coca-zero">0</span>
+                                    <input type="hidden" name="bev_coca_zero" value="0">
+                                    <button type="button" class="qty-btn qty-plus" onclick="adjustBeverageQty('coca-zero', 1)"><i data-lucide="plus"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Sprite -->
+                            <div class="item-selector-card" data-beverage-type="sprite">
+                                <div class="item-info">
+                                    <h5>Sprite Lima-Limón (1.5L)</h5>
+                                    <p class="item-desc">Bebida gaseosa sabor a lima-limón, limpia y refrescante.</p>
+                                    <span class="beverage-price-display" data-base-price="2000">$2.000 c/u</span>
+                                </div>
+                                <div class="quantity-controller">
+                                    <button type="button" class="qty-btn qty-minus" onclick="adjustBeverageQty('sprite', -1)"><i data-lucide="minus"></i></button>
+                                    <span class="qty-val" id="qty-bev-sprite">0</span>
+                                    <input type="hidden" name="bev_sprite" value="0">
+                                    <button type="button" class="qty-btn qty-plus" onclick="adjustBeverageQty('sprite', 1)"><i data-lucide="plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-actions">
+                            <button type="button" class="btn btn-secondary btn-prev" data-prev="2"><i data-lucide="arrow-left"></i> Anterior</button>
+                            <button type="button" class="btn btn-primary btn-next" data-next="4">Siguiente Paso <i data-lucide="arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- PASO 4: CONFIRMACIÓN Y PAGO -->
+                    <div class="wizard-step" id="wizard-step-4">
+                        <h3>4. Confirmar Pedido</h3>
+                        <p class="step-instruction">Verifica detalladamente el resumen de tu compra y selecciona el medio de pago.</p>
+
+                        <!-- Resumen Detallado del Pedido -->
+                        <div class="order-summary-details">
+                            <div class="summary-block">
+                                <h5><i data-lucide="user"></i> Información del Cliente</h5>
+                                <div class="summary-details-grid">
+                                    <div><strong>Nombre:</strong> <span id="sum-client-name">-</span></div>
+                                    <div><strong>Teléfono:</strong> <span id="sum-client-phone">-</span></div>
+                                    <div><strong>Entrega:</strong> <span id="sum-delivery-type">-</span></div>
+                                    <div class="full-row" id="sum-address-row"><strong>Dirección:</strong> <span id="sum-client-address">-</span></div>
+                                </div>
+                            </div>
+
+                            <div class="summary-block">
+                                <h5><i data-lucide="shopping-cart"></i> Detalle de Productos</h5>
+                                <div class="summary-items-list" id="summary-items-list">
+                                    <!-- Dinámico por JS -->
+                                    <p class="empty-list-msg">No has seleccionado ningún producto aún.</p>
+                                </div>
+                            </div>
+
+                            <div class="summary-total-row">
+                                <span>Importe Final a Pagar:</span>
+                                <strong id="summary-total-price">$0</strong>
+                            </div>
+                        </div>
+
+                        <!-- Selector de Medio de Pago -->
+                        <div class="payment-method-section">
+                            <h4>Medio de Pago</h4>
+                            <div class="payment-methods-grid">
+                                <label class="payment-card-option selected">
+                                    <input type="radio" name="payment_method" value="efectivo" checked>
+                                    <div class="payment-option-content">
+                                        <i data-lucide="banknote"></i>
+                                        <span>Efectivo</span>
+                                    </div>
+                                </label>
+                                <label class="payment-card-option">
+                                    <input type="radio" name="payment_method" value="transferencia">
+                                    <div class="payment-option-content">
+                                        <i data-lucide="wallet-card-back"></i>
+                                        <span>Transferencia</span>
+                                    </div>
+                                </label>
+                                <label class="payment-card-option">
+                                    <input type="radio" name="payment_method" value="debito">
+                                    <div class="payment-option-content">
+                                        <i data-lucide="credit-card"></i>
+                                        <span>Débito</span>
+                                    </div>
+                                </label>
+                                <label class="payment-card-option">
+                                    <input type="radio" name="payment_method" value="credito">
+                                    <div class="payment-option-content">
+                                        <i data-lucide="credit-card"></i>
+                                        <span>Crédito</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Información dinámica de pago -->
+                            <div class="payment-instruction-box">
+                                <div id="payment-desc-efectivo" class="payment-instruction-item">
+                                    <i data-lucide="info"></i>
+                                    <span><strong>Pago en Efectivo:</strong> El pago se realiza al recibir el pedido o en el local al retirar.</span>
+                                </div>
+                                <div id="payment-desc-transferencia" class="payment-instruction-item" style="display: none;">
+                                    <i data-lucide="wallet"></i>
+                                    <span><strong>Pago por Transferencia Bancaria:</strong><br>Realiza tu transferencia al Alias: <strong class="alias-tag">alias.empanadissima</strong>. Recuerda enviar el comprobante de pago por teléfono.</span>
+                                </div>
+                                <div id="payment-desc-tarjeta" class="payment-instruction-item" style="display: none;">
+                                    <i data-lucide="info"></i>
+                                    <span><strong>Pago con Tarjeta:</strong> El pago se realiza al recibir el pedido con posnet móvil o en el local al retirar.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-actions">
+                            <button type="button" class="btn btn-secondary btn-prev" data-prev="3"><i data-lucide="arrow-left"></i> Anterior</button>
+                            <button type="button" class="btn btn-success btn-lg pulse-effect" id="btn-confirm-order">
+                                <i data-lucide="check"></i> Confirmar Pedido
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- PANEL RESUMEN LATERAL (DESKTOP) / FLOTANTE -->
+            <aside class="order-summary-sidebar">
+                <div class="sidebar-card">
+                    <div class="sidebar-header">
+                        <h4>Mi Pedido</h4>
+                        <i data-lucide="shopping-cart" class="cart-icon"></i>
+                    </div>
+                    
+                    <div class="sidebar-content">
+                        <div class="sidebar-items-list" id="sidebar-items-list">
+                            <!-- Dinámico por JS -->
+                            <p class="empty-sidebar-msg">Empieza a seleccionar empanadas, pizzas o promos de arriba.</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-footer">
+                        <div class="sidebar-total">
+                            <span>Total Estimado:</span>
+                            <span class="total-price" id="sidebar-total-price">$0</span>
+                        </div>
+                        <a href="#wizard-section" class="btn btn-primary btn-block btn-sm" onclick="goToStep(2)">Completar Pedido</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Empanadissima Logo Footer" class="footer-logo-img" onerror="this.style.display='none'">
+                <h3>Empanadissima</h3>
+                <p>Las mejores empanadas y pizzas en Mar del Plata. Calidad y sabor garantizados.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Menú rápido</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu-gallery">Especialidades</a></li>
+                    <li><a href="#wizard-section">Hacer Pedido</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i data-lucide="map-pin"></i> Edison 1587, Mar del Plata</p>
+                <p><i data-lucide="phone"></i> 223-555-5555</p>
+                <p><i data-lucide="clock"></i> Lunes a Sábado de 11 a 17 hs</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Empanadissima. Todos los derechos reservados. Diseñado para Mar del Plata.</p>
+            <!-- ACCESO POCO VISIBLE AL ADMINISTRADOR -->
+            <a href="#" class="admin-access-link" id="admin-login-link"><i data-lucide="shield-alert"></i> Acceso Administrador</a>
+        </div>
+    </footer>
+
+    <!-- MODAL DE ADMINISTRACIÓN (LOGIN / PANEL) -->
+    <div class="modal-overlay" id="admin-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-title"><i data-lucide="lock"></i> Autenticación de Administrador</h3>
+                <button type="button" class="btn-close-modal" id="btn-close-modal"><i data-lucide="x"></i></button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- FORMULARIO DE LOGIN DE ADMIN -->
+                <div id="admin-login-view" class="admin-view active">
+                    <p class="login-instruction">Inicia sesión con tu cuenta para acceder a la gestión de pedidos de Empanadissima.</p>
+                    <form id="admin-login-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="admin_user">Usuario Administrador</label>
+                            <div class="input-with-icon">
+                                <i data-lucide="user"></i>
+                                <input type="text" id="admin_user" placeholder="Ej: esteban" required autocomplete="username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="admin_password">Contraseña</label>
+                            <div class="input-with-icon">
+                                <i data-lucide="key-round"></i>
+                                <input type="password" id="admin_password" placeholder="Contraseña de administrador" required autocomplete="current-password">
+                            </div>
+                        </div>
+                        <span class="error-msg" id="login-error">Usuario o contraseña incorrectos.</span>
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-login-submit">
+                            <i data-lucide="log-in"></i> Ingresar al Panel
+                        </button>
+                    </form>
+                    
+                    <div class="admin-credentials-hint">
+                        <strong>Usuarios de Prueba:</strong>
+                        <ul>
+                            <li>administrador / admin123</li>
+                            <li>esteban / admin123</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CONTENIDO DEL PANEL DE ADMIN (TRAS LOGUEARSE) -->
+                <div id="admin-dashboard-view" class="admin-view">
+                    <div class="admin-dashboard-header">
+                        <div class="admin-welcome">
+                            <span>Bienvenido/a, <strong id="logged-admin-name">Administrador</strong></span>
+                            <span class="badge-role">Admin</span>
+                        </div>
+                        <button type="button" class="btn btn-outline-danger btn-sm" id="btn-admin-logout">
+                            <i data-lucide="log-out"></i> Cerrar Sesión
+                        </button>
+                    </div>
+
+                    <!-- Pestañas del Panel de Control -->
+                    <div class="admin-dashboard-tabs">
+                        <button class="admin-tab-btn active" data-admin-tab="orders-nuevos">
+                            <i data-lucide="bell"></i> Nuevos <span class="badge-tab-count" id="count-nuevos">0</span>
+                        </button>
+                        <button class="admin-tab-btn" data-admin-tab="orders-tomados">
+                            <i data-lucide="play"></i> En Proceso <span class="badge-tab-count" id="count-tomados">0</span>
+                        </button>
+                        <button class="admin-tab-btn" data-admin-tab="orders-entregados">
+                            <i data-lucide="check-circle-2"></i> Entregados <span class="badge-tab-count" id="count-entregados">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Lista de Pedidos -->
+                    <div class="admin-orders-list-wrapper">
+                        <!-- PESTAÑA: NUEVOS PEDIDOS -->
+                        <div id="orders-nuevos" class="admin-tab-content active">
+                            <div class="orders-grid" id="grid-nuevos">
+                                <!-- Dinámico -->
+                                <div class="no-orders-msg"><i data-lucide="check"></i> ¡No hay pedidos nuevos pendientes!</div>
+                            </div>
+                        </div>
+
+                        <!-- PESTAÑA: PEDIDOS TOMADOS (EN PROCESO) -->
+                        <div id="orders-tomados" class="admin-tab-content">
+                            <div class="orders-grid" id="grid-tomados">
+                                <!-- Dinámico -->
+                                <div class="no-orders-msg"><i data-lucide="clock"></i> No tienes ningún pedido en proceso en este momento.</div>
+                            </div>
+                        </div>
+
+                        <!-- PESTAÑA: ENTREGADOS (HISTORIAL) -->
+                        <div id="orders-entregados" class="admin-tab-content">
+                            <div class="orders-grid" id="grid-entregados">
+                                <!-- Dinámico -->
+                                <div class="no-orders-msg"><i data-lucide="archive"></i> Aún no se han completado entregas.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIONES TOAST -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
