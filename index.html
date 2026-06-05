@@ -832,6 +832,51 @@
         </div>
     </div>
 
+    <!-- CHAT FLOTANTE -->
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" aria-label="Abrir chat">
+            <i data-lucide="message-square" class="chat-icon-open"></i>
+            <i data-lucide="x" class="chat-icon-close" style="display: none;"></i>
+            <span class="chat-badge" id="chat-badge" style="display: none;">1</span>
+        </button>
+        <div class="chat-box" id="chat-box" style="display: none;">
+            <div class="chat-header">
+                <div class="chat-title-info">
+                    <div class="chat-avatar">
+                        <img src="logo.png" alt="Empanadissima Asistente" onerror="this.style.display='none'">
+                    </div>
+                    <div>
+                        <h4>Asistente Virtual</h4>
+                        <span class="chat-status"><span class="status-dot"></span> En línea</span>
+                    </div>
+                </div>
+                <button type="button" class="chat-close" id="chat-close-btn" aria-label="Cerrar chat">
+                    <i data-lucide="minus"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message bot">
+                    <p>¡Hola! Soy tu asistente de Empanadissima 🥟. ¿En qué te puedo ayudar hoy con tu pedido o consulta?</p>
+                    <span class="chat-time" id="initial-chat-time">12:00</span>
+                </div>
+            </div>
+            <div class="chat-loading" id="chat-loading" style="display: none;">
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="loading-text">Buscando respuesta...</span>
+            </div>
+            <form class="chat-input-area" id="chat-form">
+                <input type="text" id="chat-input" placeholder="Escribe tu mensaje..." autocomplete="off" required>
+                <button type="submit" class="chat-submit-btn" aria-label="Enviar mensaje">
+                    <i data-lucide="send"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <!-- NOTIFICACIONES TOAST -->
     <div class="toast-container" id="toast-container"></div>
 

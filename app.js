@@ -1278,4 +1278,128 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         }, 3500);
     }
+
+    /* ==========================================================================
+       LÓGICA DEL CHAT FLOTANTE
+       ========================================================================== */
+    const chatWidget = document.getElementById('chat-widget');
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatBox = document.getElementById('chat-box');
+    const chatCloseBtn = document.getElementById('chat-close-btn');
+    const chatForm = document.getElementById('chat-form');
+    const chatInput = document.getElementById('chat-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatLoading = document.getElementById('chat-loading');
+    const chatIconOpen = chatToggle.querySelector('.chat-icon-open');
+    const chatIconClose = chatToggle.querySelector('.chat-icon-close');
+    const chatBadge = document.getElementById('chat-badge');
+    const initialTimeEl = document.getElementById('initial-chat-time');
+
+    // Inicializar hora del primer mensaje
+    if (initialTimeEl) {
+        const now = new Date();
+        initialTimeEl.textContent = now.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' hs';
+    }
+
+    // Toggle para abrir/cerrar chat
+    chatToggle.addEventListener('click', () => {
+        const isHidden = chatBox.style.display === 'none';
+        if (isHidden) {
+            chatBox.style.display = 'flex';
+            chatIconOpen.style.display = 'none';
+            chatIconClose.style.display = 'block';
+            chatBadge.style.display = 'none'; // Ocultar badge al abrir
+            chatInput.focus();
+            scrollToBottom();
+        } else {
+            closeChat();
+        }
+    });
+
+    // Cerrar desde el botón "-" en el header del chat
+    chatCloseBtn.addEventListener('click', closeChat);
+
+    function closeChat() {
+        chatBox.style.display = 'none';
+        chatIconOpen.style.display = 'block';
+        chatIconClose.style.display = 'none';
+    }
+
+    function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Envío del mensaje
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Limpiar input
+        chatInput.value = '';
+
+        // Agregar mensaje del usuario a la pantalla
+        addMessage(text, 'user');
+        scrollToBottom();
+
+        // Mostrar indicador de carga
+        chatLoading.style.display = 'flex';
+        scrollToBottom();
+        
+        // Deshabilitar input y botón durante la llamada
+        chatInput.disabled = true;
+        const submitBtn = chatForm.querySelector('.chat-submit-btn');
+        if (submitBtn) submitBtn.disabled = true;
+
+        try {
+            const response = await fetch('https://hook.us2.make.com/3sy6nnvgm6cvuqevkatlus6whnullcb4', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ mensaje: text })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            }
+
+            const data = await response.json();
+            
+            // Ocultar carga
+            chatLoading.style.display = 'none';
+            
+            // Mostrar respuesta
+            const reply = data.respuesta || 'Lo siento, no pude procesar tu mensaje. ¿Puedes intentarlo de nuevo?';
+            addMessage(reply, 'bot');
+        } catch (error) {
+            console.error('Error en el chat:', error);
+            chatLoading.style.display = 'none';
+            addMessage('Hubo un problema de conexión con el asistente virtual. Por favor, intenta de nuevo más tarde.', 'bot');
+        } finally {
+            // Habilitar controles
+            chatInput.disabled = false;
+            if (submitBtn) submitBtn.disabled = false;
+            chatInput.focus();
+            scrollToBottom();
+        }
+    });
+
+    function addMessage(text, sender) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `chat-message ${sender}`;
+        
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }) + ' hs';
+        
+        // Convertir saltos de línea a <br>
+        const formattedText = text.replace(/\n/g, '<br>');
+        
+        msgDiv.innerHTML = `
+            <p>${formattedText}</p>
+            <span class="chat-time">${timeStr}</span>
+        `;
+        
+        chatMessages.appendChild(msgDiv);
+    }
 });
