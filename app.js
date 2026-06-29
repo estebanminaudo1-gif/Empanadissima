@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Base de datos de administradores (Datos reales reemplazables aquí)
     const ADMIN_USERS = [
         { username: 'administrador', password: 'admin123', name: 'Administrador' },
-        { username: 'esteban', password: 'admin123', name: 'Esteban' }
+        { username: 'esteban', password: 'admin123', name: 'Esteban' },
+        { username: 'admin', password: '1234', name: 'Admin' }
     ];
 
     let currentAdmin = null; // Guardará el administrador logueado
