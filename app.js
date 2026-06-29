@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * LÓGICA DE NEGOCIO Y CONTROLADOR DE INTERFAZ - EMPANADISSIMA
+ * LÓGICA DE NEGOCIO Y CONTROLADOR DE INTERFAZ - TREJO
  * ==========================================================================
  */
 
@@ -791,9 +791,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Obtener el número de orden autoincremental
-        let lastOrderNum = parseInt(localStorage.getItem('empanadissima_last_order_num')) || 1000;
+        let lastOrderNum = parseInt(localStorage.getItem('trejo_last_order_num')) || 1000;
         const newOrderNum = lastOrderNum + 1;
-        localStorage.setItem('empanadissima_last_order_num', newOrderNum);
+        localStorage.setItem('trejo_last_order_num', newOrderNum);
 
         // Crear Objeto de Pedido
         const nuevoPedido = {
@@ -817,9 +817,9 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Guardar Pedido en localStorage
-        let pedidos = JSON.parse(localStorage.getItem('empanadissima_pedidos')) || [];
+        let pedidos = JSON.parse(localStorage.getItem('trejo_pedidos')) || [];
         pedidos.push(nuevoPedido);
-        localStorage.setItem('empanadissima_pedidos', JSON.stringify(pedidos));
+        localStorage.setItem('trejo_pedidos', JSON.stringify(pedidos));
 
         // Mostrar Feedback Exitoso
         showSuccessModal(newOrderNum);
@@ -874,7 +874,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (state.paymentMethod === 'transferencia') {
-            msg += `<br><br><span class="alias-tag">Recuerda hacer la transferencia al alias: alias.empanadissima</span>`;
+            msg += `<br><br><span class="alias-tag">Recuerda hacer la transferencia al alias: alias.trejo</span>`;
         }
 
         // Crear una ventana emergente premium
@@ -917,7 +917,7 @@ document.addEventListener('DOMContentLoaded', () => {
         adminModal.classList.add('active');
 
         // Chequear si ya había un administrador logueado en la sesión
-        const sessionAdmin = sessionStorage.getItem('empanadissima_active_admin');
+        const sessionAdmin = sessionStorage.getItem('trejo_active_admin');
         if (sessionAdmin) {
             const admin = JSON.parse(sessionAdmin);
             loginAdminUser(admin);
@@ -961,7 +961,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loginForm.reset();
             
             // Guardar sesión
-            sessionStorage.setItem('empanadissima_active_admin', JSON.stringify(foundAdmin));
+            sessionStorage.setItem('trejo_active_admin', JSON.stringify(foundAdmin));
             loginAdminUser(foundAdmin);
             
             showToast(`¡Sesión iniciada como ${foundAdmin.name}!`, 'success');
@@ -986,7 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Logout Administrador
     document.getElementById('btn-admin-logout').addEventListener('click', () => {
-        sessionStorage.removeItem('empanadissima_active_admin');
+        sessionStorage.removeItem('trejo_active_admin');
         currentAdmin = null;
         showLoginView();
         showToast('Sesión de administrador cerrada.', 'info');
@@ -1016,7 +1016,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderAdminDashboard() {
         let pedidos = [];
         try {
-            pedidos = JSON.parse(localStorage.getItem('empanadissima_pedidos')) || [];
+            pedidos = JSON.parse(localStorage.getItem('trejo_pedidos')) || [];
         } catch (e) {
             console.error("Error al leer pedidos de localStorage:", e);
             pedidos = [];
@@ -1210,14 +1210,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let pedidos = JSON.parse(localStorage.getItem('empanadissima_pedidos')) || [];
+        let pedidos = JSON.parse(localStorage.getItem('trejo_pedidos')) || [];
         const index = pedidos.findIndex(o => o.id === orderId);
 
         if (index !== -1) {
             pedidos[index].estado = 'Tomado';
             pedidos[index].adminTomo = currentAdmin.name;
 
-            localStorage.setItem('empanadissima_pedidos', JSON.stringify(pedidos));
+            localStorage.setItem('trejo_pedidos', JSON.stringify(pedidos));
             renderAdminDashboard();
             showToast(`¡Pedido #${orderId} tomado con éxito!`, 'success');
         }
@@ -1230,14 +1230,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        let pedidos = JSON.parse(localStorage.getItem('empanadissima_pedidos')) || [];
+        let pedidos = JSON.parse(localStorage.getItem('trejo_pedidos')) || [];
         const index = pedidos.findIndex(o => o.id === orderId);
 
         if (index !== -1) {
             pedidos[index].estado = 'Entregado';
             pedidos[index].adminEntrego = currentAdmin.name;
 
-            localStorage.setItem('empanadissima_pedidos', JSON.stringify(pedidos));
+            localStorage.setItem('trejo_pedidos', JSON.stringify(pedidos));
             renderAdminDashboard();
             showToast(`¡Pedido #${orderId} marcado como entregado!`, 'success');
         }
