@@ -68,9 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Base de datos de administradores (Datos reales reemplazables aquí)
     const ADMIN_USERS = [
-        { username: 'administrador', password: 'admin123', name: 'Administrador' },
-        { username: 'esteban', password: 'admin123', name: 'Esteban' },
-        { username: 'admin', password: '1234', name: 'Admin' }
+        { username: '', password: '', name: 'Administrador' }
     ];
 
     let currentAdmin = null; // Guardará el administrador logueado
@@ -952,8 +950,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const passVal = (document.getElementById('admin_password').value || '').trim(); // Recorta espacios en contraseña también
 
         const foundAdmin = ADMIN_USERS.find(u => 
-            u && u.username && u.username.toLowerCase() === userVal.toLowerCase() && 
-            u.password && u.password.trim() === passVal
+            u && u.username !== undefined && u.username.toLowerCase() === userVal.toLowerCase() && 
+            u.password !== undefined && u.password.trim() === passVal
         );
 
         if (foundAdmin) {
